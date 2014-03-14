@@ -5,6 +5,6 @@ There are a lot of changes made to the code because of the difference in the pro
 The project is in an very early state at the moment and I hope I will get time to put more work into it soon
 
 I started this project because I want to explore the concept of µ-services and needed a C# client. The code is
-used in one of my hobby projects at the moment and is no considered 'industrial strength' with full exception handling
+used in one of my hobby projects at the moment and is not considered 'industrial strength' with full exception handling
 and test coverage.
  
