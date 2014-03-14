@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC9E0741-B8EE-4745-9F59-6B0191B07B2B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kafka.Client</RootNamespace>
+    <AssemblyName>Kafka.Client</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connector.cs" />
+    <Compile Include="KafkaConnection.cs" />
+    <Compile Include="KafkaException.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="MessageSet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestType.cs" />
+    <Compile Include="Request\BaseRequest.cs" />
+    <Compile Include="Request\FetchPartition.cs" />
+    <Compile Include="Request\FetchRequest.cs" />
+    <Compile Include="Request\FetchTopic.cs" />
+    <Compile Include="Request\MetadataRequest.cs" />
+    <Compile Include="Request\OffsetPartition.cs" />
+    <Compile Include="Request\OffsetRequest.cs" />
+    <Compile Include="Request\OffsetTopic.cs" />
+    <Compile Include="Request\Partition.cs" />
+    <Compile Include="Request\ProducePartition.cs" />
+    <Compile Include="Request\ProduceRequest.cs" />
+    <Compile Include="Request\ProduceTopic.cs" />
+    <Compile Include="Request\Request.cs" />
+    <Compile Include="Request\RequestBuffer.cs" />
+    <Compile Include="Request\Topic.cs" />
+    <Compile Include="Response\BasePartition.cs" />
+    <Compile Include="Response\BaseResponse.cs" />
+    <Compile Include="Response\BaseTopic.cs" />
+    <Compile Include="Response\Broker.cs" />
+    <Compile Include="Response\FetchPartition.cs" />
+    <Compile Include="Response\FetchResponse.cs" />
+    <Compile Include="Response\FetchTopic.cs" />
+    <Compile Include="Response\MetadataResponse.cs" />
+    <Compile Include="Response\OffsetPartition.cs" />
+    <Compile Include="Response\OffsetResponse.cs" />
+    <Compile Include="Response\PartitionMetadata.cs" />
+    <Compile Include="Response\ProducePartition.cs" />
+    <Compile Include="Response\ProduceResponse.cs" />
+    <Compile Include="Response\TopicMetaData.cs" />
+    <Compile Include="Util\BitWorks.cs" />
+    <Compile Include="Util\BufferReader.cs" />
+    <Compile Include="Util\Crc32.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
