@@ -1,3 +1,4 @@
+#Kafka4n 
 I was not able to find any C# client that was written for the 0.8 version of the Apache Kafka bus so I decided
 to write one. Its based on the .NET Kafak Client here https://github.com/kafka-dev/kafka/blob/master/clients/csharp
 There are a lot of changes made to the code because of the difference in the protocol between 0.7 and 0.8
