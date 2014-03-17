@@ -86,3 +86,66 @@ The KafkaConsole program was used as work bench to exercise the low level api du
             }
         }
     }
+    
+## High level api ##
+The KafkaBusConnector and the IkafkaMessageConsumer represent a higher level API when it comes to send and receive messages on the Kafka bus. This API can be used for simple µ-services that don't need the low level control. The API is implemented in the KafkaBusConnector class in the KafkaBusClient project.  
+
+### Produce ###
+The produce method in the KafkaBusConnector will check if the topic exists, and create it if it's missing, before it try to send the data to the broker. The return value contains the Kafka bus error.
+
+
+    short Produce(string topicName, int partitionId, string data)
+### Consume ###
+The consume API use a message stream to read messages from the bus. The message stream implements Ienumerable<KafkaMessage> and can be used in a foreach loop.
+
+
+    public KafkaMessageStream CreateMessageStream(string topicName, int partitionId, long offset )
+The IkafkaMessageConsumer in the KafkaBusClient is another way to consume messages from the bus. MessageConsumer will not block when reading messages, instead it use a delegate to call back when a message is available.
+### Usage ###
+
+        static void DumpMessage(KafkaMessage message)
+        {
+            Console.WriteLine(message);
+        }
+
+        static void Main(string[] args)
+        {
+            string topicName = "kafkatopic";
+            int partitionId = 0;
+            int correlationId = 0;
+            int max = 2;
+
+            KafkaBusConnector busConnector = new KafkaBusConnector("192.168.0.105", 9092, "KafkaConsole");
+
+            IKafkaMessageConsumer consumer = new MessageConsumer();
+            consumer.Start(busConnector, topicName, partitionId, 4, DumpMessage);
+
+            while (Console.KeyAvailable == false)
+            {
+                Thread.Sleep(100);
+            }
+            consumer.Stop();
+
+            var stream = busConnector.CreateMessageStream(topicName, partitionId, KafkaMessageStream.StreamStart.Beginning);
+            foreach (var kafkaMessage in stream)
+            {
+                Console.WriteLine(kafkaMessage);
+                if (Console.KeyAvailable == true)
+                {
+                    ConsoleKeyInfo info = Console.ReadKey();
+                    stream.Close();
+                }
+            }
+            stream = busConnector.CreateMessageStream(topicName, partitionId, KafkaMessageStream.StreamStart.Next);
+            foreach (var kafkaMessage in stream)
+            {
+                Console.WriteLine(kafkaMessage);
+                if (Console.KeyAvailable == true)
+                {
+                    ConsoleKeyInfo info = Console.ReadKey();
+                    stream.Close();
+                }
+            }
+        }
+    
+    
