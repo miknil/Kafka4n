@@ -13,10 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaMetadata", "KafkaMetad
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConsume", "KafkaConsume\KafkaConsume.csproj", "{3E9FA750-DCC8-496F-ACFC-8B3DECD9F184}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaOneWire", "KafkaOneWire\KafkaOneWire.csproj", "{BB339461-1A66-434F-8833-2856C768ED6F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OWKafka", "OWKafka\OWKafka.csproj", "{0D04D063-3321-48D7-BDD1-2B52ACB35A4D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,14 +43,6 @@ Global
 		{3E9FA750-DCC8-496F-ACFC-8B3DECD9F184}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E9FA750-DCC8-496F-ACFC-8B3DECD9F184}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E9FA750-DCC8-496F-ACFC-8B3DECD9F184}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BB339461-1A66-434F-8833-2856C768ED6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB339461-1A66-434F-8833-2856C768ED6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB339461-1A66-434F-8833-2856C768ED6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BB339461-1A66-434F-8833-2856C768ED6F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D04D063-3321-48D7-BDD1-2B52ACB35A4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D04D063-3321-48D7-BDD1-2B52ACB35A4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D04D063-3321-48D7-BDD1-2B52ACB35A4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D04D063-3321-48D7-BDD1-2B52ACB35A4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
