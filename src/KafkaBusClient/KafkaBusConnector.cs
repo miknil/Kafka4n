@@ -93,7 +93,7 @@ namespace KafkaBusClient
 
                 if (partitionId == -1)
                     partitionId = topicPartitionDictionary[topicName];
-                var message = Encoding.ASCII.GetBytes(data);
+                var message = Encoding.UTF8.GetBytes(data);
 
                 ProduceResponse response = connector.Produce(DefaultCorrelationId, clientId, 500, topicName, partitionId, message);
                 return response.ErrorCode(topicName, 0);
